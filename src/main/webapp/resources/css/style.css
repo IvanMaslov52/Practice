@@ -1,0 +1,639 @@
+
+.header-margin {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background: #888888;
+}
+
+.ssilka {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s
+}
+
+.ssilka:hover {
+    color: black;
+}
+
+.navRoboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.liNav {
+    width: 150px;
+    display: inline-block;
+}
+
+.size2 {
+    padding: 0 50px;
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: #222222;
+}
+
+.title_color {
+    background: #555555;
+
+}
+
+.navColor {
+    position: sticky;
+    top: 0;
+    border-radius: 0 0 20px 20px;
+    background: #555555;
+}
+
+.size1 {
+    width: 1440px;
+    background: #999999;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.header-import {
+    display: flex;
+}
+
+.left1 {
+    margin-left: 120px;
+    align-self: center;
+}
+
+#contacts {
+    margin-top: 0;
+}
+
+.code-background {
+    background: #222222;
+}
+
+#code {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pre-none {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#education {
+    margin-top: 0
+}
+
+
+.indent {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.photo {
+    width: 400px;
+    height: 300px;
+    padding: 0 25px;
+}
+
+.imageIndent {
+    padding: 0 25px;
+}
+
+.imageCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.specTable {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+table {
+    width: 500px; /* Ширина таблицы */
+    margin: auto;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+}
+
+
+.dropbtn {
+    font-family: 'Roboto', sans-serif;
+    background-color: #555555;
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.5s
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #999999;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #999999;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+.dropdown:hover .dropbtn {
+    color: black
+}
+
+
+.c-button {
+    appearance: none;
+    border: 0;
+    border-radius: 15px;
+    background: #fff;
+    color: black;
+    padding: 8px 16px;
+    font-size: 15px;
+}
+
+.borderRad {
+    border-radius: 20px;
+}
+
+.rad {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* Позиционируем палитру так, чтобы она располагалась в правом верхнем углу страницы */
+.color-panel {
+    position: absolute; /* задаем абсолютное позиционирование */
+    top: 0px; /* прижимаем палитру к верхней части страницы  */
+    right: 10px; /* создаем внешний отступ справа */
+    background-color: #fff;
+    height: 60px;
+    padding: 15px 5px 5px 5px; /* задаем внутренние отступы */
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35); /* добавим тень*/
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 0px 0px 30px 30px; /* закруглим края панели */
+}
+
+/* Зададим размеры ячейкам таблицы, закруглим их и прижмем к левому краю панели */
+.color-panel div {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    float: left;
+    margin: 5px;
+}
+
+/* Для каждого блока с «цветным» идентификатором зададим соответствующий названию цвет фона */
+#blue {
+    background-color: #b3e5fc;
+}
+
+#red {
+    background-color: #ffcdd2;
+}
+
+#green {
+    background-color: #c5e1a5;
+}
+
+#orange {
+    background-color: #ffcc80;
+}
+
+#grey {
+    background-color: #888888;
+}
+
+.visible {
+    display: none;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    background: #999999;
+}
+
+.imgButton {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    margin: 3px;
+}
+
+.imgButton:hover {
+    outline: 2px solid black;
+}
+
+.studentLabel {
+    width: 130px;
+}
+
+.partyLabel {
+    width: 130px;
+}
+
+.subjectLabel {
+    width: 150px;
+}
+
+label {
+    float: left;
+    padding-right: 10px;
+}
+
+
+.selectCSS {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    border-radius: .3em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+.selectCSS::-ms-expand {
+    display: none;
+}
+
+.selectCSS:hover {
+    border-color: #888;
+}
+
+.selectCSS:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+.selectCSS option {
+    font-weight: normal;
+}
+
+*[dir="rtl"] .selectCSS, :root:lang(ar) .selectCSS, :root:lang(iw) .selectCSS {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+}
+
+.search {
+    position: relative;
+}
+
+.searchResult {
+    background: #FFF;
+    border: 1px #ccc solid;
+    width: 150px;
+    border-radius: 3px;
+    max-height: 100px;
+    overflow-y: scroll;
+    display: none;
+}
+
+.searchResult li {
+    list-style: none;
+    padding: 5px 10px;
+    margin: 0 0 0 -40px;
+    color: #0896D3;
+    border-bottom: 1px #ccc solid;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.searchResult li:hover {
+    background: #F9FF00;
+}
+
+input {
+    width: 200px;
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    margin: 3px;
+}
+
+.ms-container {
+    background: transparent url("/resources/image/switch.png") no-repeat 50% 50%;
+    width: 370px;
+}
+
+.ms-container:after {
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    clear: both;
+    min-height: 0;
+    visibility: hidden;
+}
+
+.ms-container .ms-selectable, .ms-container .ms-selection {
+    background: #fff;
+    color: #555555;
+    float: left;
+    width: 45%;
+}
+
+.ms-container .ms-selection {
+    float: right;
+}
+
+.ms-container .ms-list {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    height: 200px;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.ms-container .ms-list.ms-focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0;
+    outline: thin dotted \9;
+}
+
+.ms-container ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.ms-container .ms-optgroup-container {
+    width: 100%;
+}
+
+.ms-container .ms-optgroup-label {
+    margin: 0;
+    padding: 5px 0px 0px 5px;
+    cursor: pointer;
+    color: #999;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable,
+.ms-container .ms-selection li.ms-elem-selection {
+    border-bottom: 1px #eee solid;
+    padding: 2px 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.ms-container .ms-selectable li.ms-hover,
+.ms-container .ms-selection li.ms-hover {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    background-color: #08c;
+}
+
+.ms-container .ms-selectable li.disabled,
+.ms-container .ms-selection li.disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: text;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #555555;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #555555;
+
+}
+
+.logbtn {
+    background-color: #555555;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.logbtn:hover {
+    color: black;
+}
+
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 5px;
+    margin: 0 5px 5px 0;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #444;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    transition: box-shadow 0.2s;
+}
+
+.btn:focus-visible {
+    border: 1px solid #4c51f9;
+    outline: none;
+}
+
+.btn:hover {
+    transition: all 0.2s;
+    box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+
+.btn:active {
+    background-color: #808080;
+}
+
+.btn:disabled {
+    background-color: #eee;
+    border-color: #eee;
+    color: #444;
+    cursor: not-allowed;
+}
+
+.selecter {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /* рамка и отступы */
+    border: 0.1em solid;
+    padding: 0 0.2em;
+}
+
+#selectedElem {
+    background: #FFF;
+    border: 1px #ccc solid;
+    width: 150px;
+    border-radius: 3px;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+#selectedElem li {
+    list-style: none;
+    padding: 5px 10px;
+    margin: 0 0 0 -40px;
+    color: #0896D3;
+    border-bottom: 1px #ccc solid;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#selectedElem li:hover {
+    background: #F9FF00;
+}
+
+.resultDiv {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.searchInput {
+
+}
