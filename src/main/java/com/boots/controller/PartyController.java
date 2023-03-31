@@ -14,14 +14,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@PreAuthorize("hasAnyAuthority('USER')")
 @Controller
 public class PartyController {
     @Autowired
     private PartyService partyService;
 
     @GetMapping(StringConstant.SLPARTY)
-    @PreAuthorize("hasAnyAuthority('USER')")
+
     public String party() {
         return StringConstant.PARTY;
     }
@@ -45,7 +45,7 @@ public class PartyController {
     public ResponseEntity<Party> getOneParty(@PathVariable("id") Long id) {
         return new ResponseEntity<>(partyService.findPartyById(id), HttpStatus.OK);
     }
-
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     @GetMapping("/partyFind/{name}")
     public ResponseEntity<List<Party>> findParty(@PathVariable("name") String name) {
         return new ResponseEntity<>(partyService.findAllByNameLikeOrderByName(name), HttpStatus.OK);

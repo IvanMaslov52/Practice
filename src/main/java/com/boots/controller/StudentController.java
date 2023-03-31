@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@PreAuthorize("hasAnyAuthority('USER')")
 public class StudentController {
     @Autowired
     private PartyService partyService;
@@ -27,7 +28,6 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping(StringConstant.SLSTUDENT)
-    @PreAuthorize("hasAnyAuthority('USER')")
     public String student() {
         return StringConstant.STUDENT;
     }

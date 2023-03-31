@@ -2,6 +2,7 @@ package com.boots.entity;
 
 
 import lombok.AllArgsConstructor;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -22,12 +23,13 @@ public class Teacher {
     private String fio;
     @NotNull
     private String bornDate;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE})
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "teacher_subjects",
             joinColumns = {@JoinColumn(name = "teacher_id")},
             inverseJoinColumns = {@JoinColumn(name = "subjects_id")})
-    @OnDelete(action = OnDeleteAction.CASCADE)
+
     private Set<Subject> subjects = new HashSet<Subject>();
+
     @Column
     @Size(min = 3)
     private String speciality;

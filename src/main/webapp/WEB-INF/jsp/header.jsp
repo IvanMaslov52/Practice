@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>AddParty</title>
     <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+
 </head>
 <body>
 <div class="navColor">

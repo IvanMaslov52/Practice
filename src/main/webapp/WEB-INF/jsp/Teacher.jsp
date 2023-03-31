@@ -8,8 +8,12 @@
     <title>Teacher</title>
     <jsp:include page="import.jsp"/>
     <link rel="canonical" href="https://mdbootstrap.com/docs/b4/jquery/forms/date-picker/">
+
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src = "/resources/js/datepicker-ru.js" >
+    </script>
+
     <script>
         $(function () {
             $('.searchInput').bind("change keyup input click", function () {
@@ -60,6 +64,7 @@
         }, "Здесь должны быть только русские символы");
         $(function () {
             $("#bornDate").datepicker({dateFormat: 'dd/mm/yy'});
+            $("#bornDate").datepicker($.datepicker.regional[ "ru" ] );
         });
         $(function () {
             $("#teacherForm").validate

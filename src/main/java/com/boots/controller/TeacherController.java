@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@PreAuthorize("hasAnyAuthority('ADMIN')")
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
@@ -34,7 +35,7 @@ public class TeacherController {
     private PartyRepo partyRepo;
 
     @GetMapping(StringConstant.SLTEACHER)
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+
     public String teacher(Model model) {
         model.addAttribute("teacher", teacherService.findAll());
         model.addAttribute("subjectList", subjectService.findAll());

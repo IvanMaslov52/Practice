@@ -35,27 +35,29 @@ public class Subject {
     private Long studyingtime;
 
 
-    //@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE})
-    //@JoinTable(name = "teacher_subjects",
-    //        joinColumns = {@JoinColumn(name = "subjects_id")},
-    //        inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-    //private Set<Teacher> teachers = new HashSet<>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "teacher_subjects",
+            joinColumns = {@JoinColumn(name = "subjects_id")},
+            inverseJoinColumns = {@JoinColumn(name = "teacher_id")})
 
-    //public Set<Teacher> getTeachers() {
-    //    return teachers;
-    //}
-//
-    //public void setTeachers(Set<Teacher> teachers) {
-    //    this.teachers = teachers;
-    //}
+    private Set<Teacher> teachers = new HashSet<>();
+
+    public void setTeachers(Set<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
+    @PreRemove
+    public void nullificationTeachers()
+    {
+        teachers.forEach(teacher -> teacher.setSubjects(null));
+    }
+
 
     public Subject(Party party, String name, Long studyingtime) {
         this.party = party;
         this.name = name;
         this.studyingtime = studyingtime;
     }
-
     public Subject() {
     }
 

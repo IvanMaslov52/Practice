@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 @Controller
+@PreAuthorize("hasAnyAuthority('ADMIN')")
 public class SubjectController {
     @Autowired
     private PartyService partyService;
@@ -28,7 +29,7 @@ public class SubjectController {
     private SubjectService subjectService;
 
     @GetMapping(StringConstant.SLSUBJECT)
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+
     public String subjects(Model model) {
         model.addAttribute("subject", subjectService.findAll());
         return StringConstant.SUBJECT;
