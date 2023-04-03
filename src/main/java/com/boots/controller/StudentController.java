@@ -40,7 +40,6 @@ public class StudentController {
     @PostMapping(value = "/addStudent")
     public ResponseEntity<Student> addStudent(@RequestBody Student student) {
         try {
-            studentService.save(student);
             return new ResponseEntity<>(studentService.save(student), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

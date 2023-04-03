@@ -1,15 +1,12 @@
 package com.boots.controller;
 
 import com.boots.constant.StringConstant;
-import com.boots.entity.Party;
-import com.boots.entity.Student;
 import com.boots.entity.Subject;
 import com.boots.service.PartyService;
 import com.boots.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +36,7 @@ public class SubjectController {
     public ResponseEntity<Subject> addSubject(@RequestBody Subject subject) {
         try {
 
-            subjectService.save(subject);
+
             return new ResponseEntity<>(subjectService.save(subject), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

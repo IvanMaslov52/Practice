@@ -55,7 +55,6 @@ public class TeacherController {
     @PostMapping(value = "/addTeacher")
     public ResponseEntity<Teacher> addTeacher(@RequestBody Teacher teacher) {
         try {
-            teacherService.save(teacher);
             return new ResponseEntity<>(teacherService.save(teacher), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

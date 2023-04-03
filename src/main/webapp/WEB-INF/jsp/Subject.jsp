@@ -163,6 +163,9 @@
                         number: true,
                         min: 10,
                         max: 250
+                    },
+                    referal:{
+                        required:true
                     }
                 },
                 messages: {
@@ -175,12 +178,18 @@
                         number: 'Здесь не может быть символов',
                         min: 'Минимальное число 10 для времени обчуения',
                         max: 'Максимальное число 250 для времени обчуения'
+                    },
+                    referal: {
+                        required:"Необходимо выбрать группу"
                     }
                 },
                 errorPlacement: function (error, element) {
-
-                    //element.parent().append(error); // добавим в родительский блок input-а
-                    error.insertBefore(element);
+                    if (element.attr("name") == "referal")
+                        $("#spanReferal").text(error.text());
+                    if (element.attr("name") == "name")
+                        $("#spanName").text(error.text());
+                    if (element.attr("name") == "studyingtime")
+                        $("#spanStudyingtime").text(error.text());
 
                 }
             });
@@ -207,11 +216,11 @@
     </script>
 </head>
 <body>
-<div class="size1">
+<div class="size1 container">
     <jsp:include page="header.jsp"/>
 
-    <div class="roboto">
-        <div class="size2">
+    <div class="roboto container">
+        <div class="size2 container">
             <form id="subjectForm" class="form-horizontal rounded rounded-3 border border-3 p-2 border-secondary">
 
 
@@ -220,15 +229,19 @@
                 <div class="form-group">
                     <label class="control-label">Название предмета</label>
                     <input type='text' name='name' id='name' class="form-control"/>
+                    <span id="span_name"></span>
+                    <span id="spanName"></span>
                 </div>
-                <span id="span_name"></span>
+
                 <div class="form-group">
                     <label class="control-label">Кол-во занятий</label>
                     <input type='number' name='studyingtime' id='studyingtime' class="form-control"/></div>
+                <span id="spanStudyingtime"></span>
                 <div class="form-group">
                     <p>Поиск по группам:</p>
-                    <input ENGINE="text" name="referal" placeholder="Живой поиск" value='' class="searchInput"
+                    <input ENGINE="text" name='referal' placeholder="Живой поиск" value='' class="searchInput"
                            autocomplete="off">
+                    <span id="spanReferal"></span>
                     <ul class="searchResult"></ul>
                 </div>
                 <div class="form-group">

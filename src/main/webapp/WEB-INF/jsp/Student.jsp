@@ -77,6 +77,9 @@
                     },
                     bornDate: {
                         required: true
+                    },
+                    referal:{
+                        required:true
                     }
                 },
                 messages: {
@@ -92,12 +95,20 @@
                     },
                     bornDate: {
                         required: "Это поле не должно быть пустым"
+                    },
+                    referal: {
+                        required:"Необходимо выбрать группу"
                     }
                 },
                 errorPlacement: function (error, element) {
-
-                    //element.parent().append(error); // добавим в родительский блок input-а
-                    error.insertBefore(element);
+                    if (element.attr("name") == "referal")
+                        $("#spanReferal").text(error.text());
+                    if (element.attr("name") == "fio")
+                        $("#spanFio").text(error.text());
+                    if (element.attr("name") == "sticket")
+                        $("#spanSticket").text(error.text());
+                    if (element.attr("name") == "bornDate")
+                        $("#spanBornDate").text(error.text());
 
                 }
             });
@@ -239,13 +250,13 @@
 
 </head>
 <body>
-<div class="size1">
+<div class="size1 container">
 
     <jsp:include page="header.jsp"/>
 
 
-    <div class="roboto">
-        <div class="size2">
+    <div class="roboto container">
+        <div class="size2 container">
             <form id="studentForm" action="/addStudent"
                   class="form-horizontal rounded rounded-3 border border-3 p-2 border-secondary">
 
@@ -254,20 +265,25 @@
                 <div class="form-group">
                     <label class="control-label">ФИО студента</label>
                     <input type='text' name='fio' id='fio' class="form-control"/>
+                    <span id="spanFio"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Номер билета</label>
                     <input type='number' name='sticket' id='sticket' class="form-control"/>
+                    <span id="span_name"></span>
+                    <span id="spanSticket"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Дата рождения</label>
                     <input type='text' name='bornDate' id="bornDate" class="form-control"/>
+                    <span id="spanBornDate"></span>
                 </div>
-                <span id="span_name"></span>
+
                 <div class="form-group">
                     <p>Поиск по группам:</p>
                     <input ENGINE="text" name="referal" placeholder="Живой поиск" value='' class="searchInput"
                            autocomplete="off">
+                    <span id="spanReferal"></span>
                     <ul class="searchResult"></ul>
                 </div>
                 <div class="form-group">

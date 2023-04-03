@@ -29,7 +29,7 @@ public class PartyController {
     @PostMapping(value = "/addParty", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Party> addparty(@ModelAttribute Party party) {
         try {
-            partyService.save(party);
+
             return new ResponseEntity<>(partyService.save(party), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

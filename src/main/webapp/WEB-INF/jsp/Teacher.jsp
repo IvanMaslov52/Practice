@@ -75,26 +75,46 @@
                         symbols: true,
                         minlength: 4
                     },
+                    bornDate: {
+                        required: true
+                    },
                     speciality: {
                         required: true,
                         symbols: true,
                         minlength: 3
+                    },
+                    subjects:{
+                        required:true
                     }
+
                 },
                 messages: {
                     speciality: {
                         required: 'Это поле не должно быть пустым',
                         minlength: 'Здесь не может быть меньше 4 символов'
                     },
+                    bornDate: {
+                        required: "Это поле не должно быть пустым"
+                    },
                     fio: {
                         required: 'Это поле не должно быть пустым',
                         minlength: 'Здесь не может быть меньше 3 символов'
+                    },
+                    subjects:{
+                        required:"Наличие предмета обязательно"
                     }
                 },
                 errorPlacement: function (error, element) {
 
-                    //element.parent().append(error); // добавим в родительский блок input-а
-                    error.insertBefore(element);
+
+                    if (element.attr("name") == "fio")
+                        $("#spanFio").text(error.text());
+                    if (element.attr("name") == "speciality")
+                        $("#spanSticket").text(error.text());
+                    if (element.attr("name") == "bornDate")
+                        $("#spanBornDate").text(error.text());
+                    if (element.attr("name") == "subjects")
+                        $("#spanSubjects").text(error.text());
 
                 }
             });
@@ -138,7 +158,10 @@
             showAllTeacher();
             $("#teacherForm").on('submit', function (e) {
                 e.preventDefault();
-                let str = '[';
+                let str ='';
+                if($('#subjects').val()!= null)
+                {
+                str = '[';
                 for (let i = 0; i < $('#subjects').val().length; i++) {
                     if (i == $('#subjects').val().length - 1) {
                         str += $('#subjects option:contains("' + $('#subjects').val()[i] + '")').attr('data-attr');
@@ -147,6 +170,14 @@
                     }
                 }
                 str += ']';
+
+                }
+                else
+                {
+                    str= '[]';
+                }
+
+
                 if ($("#teacherForm").valid()) {
                     $.ajax({
                         type: 'POST',
@@ -256,12 +287,12 @@
 </head>
 
 <body>
-<div class="size1">
+<div class="size1 container">
 
     <jsp:include page="header.jsp"/>
 
-    <div class="roboto">
-        <div class="size2">
+    <div class="roboto container">
+        <div class="size2 container">
             <form id="teacherForm" class="form-horizontal rounded rounded-3 border border-3 p-2 border-secondary">
 
                 <input type='hidden' name='id' id='id'/>
@@ -269,26 +300,30 @@
                 <div class="form-group">
                     <label class="control-label">Специализация</label>
                     <input type='text' name='speciality' id='speciality' class="form-control"/></div>
+                <span id="spanSpeciality"></span>
                 <div class="form-group">
                     <label class="control-label">Дата рождения</label>
                     <input type='text' name='bornDate' id='bornDate' class="form-control"/>
+                    <span id="spanBornDate"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">ФИО</label>
                     <input type='text' name='fio' id='fio' class="form-control"/>
+                    <span id="spanFio"></span>
                 </div>
 
-                <select name="subjects" multiple="multiple" id="subjects" class="visible">
+                <select name='subjects' multiple="multiple" id="subjects" class="visible">
                     <c:forEach items='${subjectList}' var='subjects'>
                         <option value='${subjects.name}'
                                 data-attr='${subjects}'>${subjects.name}</option>
                     </c:forEach>
                 </select>
+                <span id="spanSubjects"></span>
 
                 <div class="form-group">
                     <div>
                         <p>Поиск по предметам:</p>
-                        <input ENGINE="text" name="referal" placeholder="Живой поиск" value="" class="searchInput"
+                        <input ENGINE="text" name='referal' placeholder="Живой поиск" value="" class="searchInput"
                                autocomplete="off">
                         <ul class="searchResult"></ul>
                     </div>

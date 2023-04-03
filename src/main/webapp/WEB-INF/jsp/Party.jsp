@@ -56,7 +56,8 @@
                             "title": "Кнопка удаления", "data": "DeleteButton", "visible": true,
                         }
                     ], "language": language(),
-                    data: arr
+                    data: arr,
+                    responsive: true
                 });
             });
         }
@@ -140,10 +141,10 @@
                     }
                 },
                 errorPlacement: function (error, element) {
-
-                    //element.parent().append(error); // добавим в родительский блок input-а
-                    error.insertBefore(element);
-
+                    if (element.attr("name") == "name")
+                        $("#spanName").text(error.text());
+                    if (element.attr("name") == "course")
+                        $("#spanCourse").text(error.text());
                 }
             });
         })
@@ -157,10 +158,10 @@
 </head>
 
 <body>
-<div class="size1">
+<div class="size1 container">
     <jsp:include page="header.jsp"/>
-    <div class="roboto">
-        <div class="size2">
+    <div class="roboto container">
+        <div class="size2 container">
             <form id="partyForm" class="form-horizontal rounded rounded-3 border border-3 p-2 border-secondary"
                   action="/addParty">
 
@@ -169,10 +170,12 @@
                     <label class="control-label ">Название группы</label>
                     <input type='text' name='name' id='name' class="form-control "/>
                     <span id="span_name"></span>
+                    <span id="spanName"></span>
                 </div>
                 <div class="form-group ">
                     <label class="control-label ">Название курса</label>
                     <input type='text' name='course' id='course' class="form-control "/>
+                    <span id="spanCourse"></span>
                 </div>
                 <div class="form-group flex-column col-5">
                     <img class="icon" alt="logo_1" src="/resources/image/back.png" onclick="hide()">
